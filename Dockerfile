@@ -1,4 +1,4 @@
-FROM node:10-slim
+FROM node:13.1.0-slim
 
 LABEL version="1.0.0"
 LABEL "repository"="http://github.com/jzweifel/gatsby-cli-github-action"
@@ -11,7 +11,7 @@ LABEL "com.github.actions.icon"="package"
 LABEL "com.github.actions.color"="purple"
 COPY LICENSE README.md THIRD_PARTY_NOTICE.md /
 
-RUN yarn global add gatsby-cli
+RUN npm install -g gatsby-cli
 
 COPY entrypoint.sh /entrypoint.sh
 
